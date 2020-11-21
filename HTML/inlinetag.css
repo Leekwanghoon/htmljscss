@@ -1,0 +1,8 @@
+b {
+    font-weight: normal;
+}
+em {
+    /* em은 기본적으로 italic체임 */
+    /* font-style: normal; */
+    color: brown;
+}

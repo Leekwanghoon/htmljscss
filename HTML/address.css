@@ -1,0 +1,67 @@
+header {
+    background: tomato;
+    margin: 10px;
+    padding: 20px;
+}
+header nav {
+
+}
+header nav ul {
+    display: flex;
+}
+header nav ul li {
+    list-style: none;
+    margin: 10px;
+}
+main {
+    /* displayflex하면 왼쪽정렬 */
+    display: flex;
+}
+section {
+    width: 70%;
+    background: tomato;
+    margin: 10px;
+    padding: 10px;
+    /* 패딩이 들어갔을때 요새끼가 안커짐 */
+    box-sizing: border-box;
+}
+section h1 {
+
+}
+/* article은독립성 보장 */
+article {
+    background: yellowgreen;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+article p {
+
+}
+
+article h2 {
+
+}
+
+aside {
+    width: 30%;
+    background: tomato;
+    margin: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+footer {
+    background: tomato;
+    margin: 10px;
+    padding: 20px;
+}
+footer address {
+
+}
+/* a는 인라인 요소라 수직으로 만들어짐 */
+footer address a {
+    /* 블록요소로 변화하면 수직으로 바뀜 */
+    display: block;
+}
+

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>canvas</title>
+</head>
+<body>
+    <canvas id="canvas"
+        width="200" height="150">
+    <script>
+        const canvas = document.getElementById('canvas');   //캔버스찾아
+        const ctx = canvas.getContext('2d');    //2d그릴것이다
+        ctx.fillStyle = 'rgb(200,0,0)';
+        ctx.fillRect(10, 10, 50, 50 )   //사각형 그리는 것.  x, y,가로사이즈,세로사이즈
+        ctx.fillStyle = 'rgb(0,0,200,0.5)';
+        ctx.fillRect(30, 30, 50, 50 )   //사각형 그리는 것.  x, y,가로사이즈,세로사이즈
+    </script>
+    </canvas>
+</body>
+</html>

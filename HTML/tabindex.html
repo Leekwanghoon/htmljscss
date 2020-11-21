@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tabindex</title>
+</head>
+<body>
+    <!-- input은 대화형 content -->
+    <!-- 순차적 tab -->
+    <!-- <input type="text" value="1">
+    <input type="text" value="2">
+    <input type="text" value="3">
+    <input type="text" value="4">
+    <input type="text" value="5">
+    <input type="text" value="1">
+     -->
+     <!-- <input type="text" value="1">
+    <input type="text" value="2" tabindex="2">
+    <input type="text" value="3">
+    <input type="text" value="4" tabindex="1">
+    <input type="text" value="5" tabindex="5"> -->
+        <!-- 비대화형컨텐츠 div 원래내재된건0, tabindex="-1" tab이동금지헤부러-->
+        <input type="text" value="1">
+        <input type="text" value="2">
+        <div tabindex="0">2.5</div>
+        <input type="text" value="3">
+        <input type="text" value="4" tabindex="-1">
+        <input type="text" value="5">
+</body>
+</html>

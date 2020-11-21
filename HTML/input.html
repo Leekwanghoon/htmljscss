@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>input</title>
+</head>
+<body>
+    <!-- <form action="/login" id="login-form"> -->
+        <!-- 글자수제한 -->
+       <!-- <input type="text" maxlength="6">  -->
+    <!-- </form> -->
+    <!-- input이 form태그 밖에 있다 id를 통해 데이터를 전송해부러 -->
+    <!-- <input type="text" form="login-form"> -->
+    <!-- <form action="/login" method="GET"> -->
+        <!-- name을통해 data넘겨 -->
+        <!-- <input type="email" name="id">
+        <input type="password" name="pw">
+        <input type="submit" value="로그인">
+    </form> -->
+    <!-- 사용자에게 숫자도 가능 -->
+    <!-- <input type="number" value="1234" readonly> -->
+    <!-- readonly와 달리 비활성화시켜부러 -->
+    <!-- <input type="number" value="1234" disabled> -->
+    <!-- 사용자에게 힌트를 제공해부러 -->
+    <!-- <input type="number" placeholder="숫자를 입력하세요"> -->
+    <!-- 최대치 최소치 -->
+    <!-- <input type="number" max="8" min="4"> -->
+    <!-- <input type="number" stpe="4"> -->
+    <!-- 체크박스 만들어부러 default체크안되있다 -->
+    <!-- <input type="checkbox" checked> -->
+    <!-- file -->
+    <!-- 얘는 하나의 파일만 받을 수 있다 -->
+    <!-- <input type="file"> -->
+    <!-- 파일 입력 여러개 받기 -->
+    <!-- <input type="file" multiple> -->
+    <!-- 이미지를 삽입가능 -->
+    <!-- <input type="image" src="./img/heropy.webp" alt="HEROPY"> -->
+    <!-- 로그인으로 이미지 보내부러 -->
+    <!-- 그니까 인풋이미지를 제출버튼으로 가능하다! -->
+    <!-- <form action="/login"> -->
+        <!-- <input type="image" src="img/heropy.webp" alt="HEROPY"> -->
+    <!-- </form> -->
+    <!-- radio default 체크안됨 클릭하면 체크 해제 안됨 -->
+    <!-- 무조건 하나만 골라라 3개의 radio가 name을 통해서 연결되어있다 해제는 이런식으로 -->
+    <!-- <input type="radio" name="radio1">
+    <input type="radio" name="radio1">
+    <input type="radio" name="radio1"> -->
+    <!-- <input type="radio" name="radio1">
+    <input type="radio" name="radio1" checked>
+    <input type="radio" name="radio1"> -->
+    <form action="/login">
+        <input type="text" name="id">
+        <input type="password" id="pw">
+        <input type="submit" value="로그인">
+        <input type="reset" value="초기화">
+    </form>
+    <input type="text">
+</body>
+</html>

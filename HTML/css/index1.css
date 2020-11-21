@@ -1,0 +1,17 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: yellowgreen;
+}
+div {
+    background: red;
+    display: inline;
+    width:200px;
+    height: 80px
+}
+span {
+    background: red;
+    width: 120px;
+    height: 80px;
+    display: inline;
+}

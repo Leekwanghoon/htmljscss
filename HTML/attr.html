@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>attr</title>
+    <style>
+        .disabled {
+            opacity: 0.2;/*20%*/
+        }
+        /*속성중에 disabled가 있는애는!*/
+        [disabled] {    /*이러면 매번 이름을 부여하지않고 [안에 속성선택자를 넣을 수 있다]*/
+            opacity: 0.2;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" value="HEROPY">
+    <input type="text" value="1234">
+    <input type="text" value="disabled text" disabled>
+</body>
+</html>

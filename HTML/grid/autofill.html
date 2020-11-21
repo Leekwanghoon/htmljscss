@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오토필(auto-fill,auto-fit)반응형 자동으로 조정해부러 이거 단위다 ㅋㅋ!</title>
+    <style>
+        .container {
+            width:300px;
+           /*width: 400px;*/ /*container크기가 줄엊들어도 하나의 아이템이 120px이하로 줄어들수 없어서 overflow가발생해 반응형이 안됨 이때 autofill을 사용해부러!*/
+            border: 10px solid lightgray;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));/*반복하는 횟수를 자동으로 채우게끔 완성해부러*/ /*120px이하로는 줄어들 수 없는 열의 크기 지정*/
+            grid-auto-rows: 100px; /*암시적행의 크기 100px*/
+        }
+        .item {
+            border: 10px solid red;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+        <div class="item">10</div>
+    </div>
+</body>
+</html>

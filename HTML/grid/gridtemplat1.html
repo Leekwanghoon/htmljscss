@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gridtemplate1</title>
+    <style>
+        .container {
+            display: grid;
+            /* grid-template-rows: 80px 350px 130px; */
+            /* grid-template-columns: 2fr 100px 1fr; */
+            /* grid-template-areas:
+                "header header header"
+                "main . aside"
+                "footer footer footer"; */
+                /* 아래와 위는 같은 의미 grid-template이라는 단축속성 간편 */
+            grid-template:
+                "header header header" 80px
+                "main . aside" 350px
+                "footer footer footer" 130px
+                / 2fr 100px 1fr;
+        }
+        .container > * {
+            border:10px solid black;
+        }
+        header {
+            grid-area: header;
+        }
+        main {
+            grid-area: main;
+        }
+        aside {
+            grid-area: aside;
+        }
+        footer {
+            grid-area: footer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>HEADER</header>
+        <main>MAIN</main>
+        <aside>ASIDE</aside>
+        <footer>FOOTER</footer>
+    </div>
+</body>
+</html>

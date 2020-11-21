@@ -1,0 +1,46 @@
+body {
+    margin: 0; 
+    padding: 0;
+}
+.header {
+    background: white;
+    border-bottom:  1px solid lightgray;
+}
+.container {
+/* 화면을 중앙으로 몰아줌 */
+    width: 980px;
+    margin: auto;
+}
+/* 패딩은 가장 최상위 요소보다는 가까운 요소에 적용하는 것이 좋다 */
+.container-left {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.logo {
+    float: left;
+    margin-right: 5px;
+}
+/* css작성하는 순서 html의 구조랑 동일하게 가라 */
+/* logo의 자식중 img를 찾아내라 */
+.logo img {
+    /* 타이트한 이미지 공간을 만들 수 있다 */
+    display: block; 
+}
+.menu {
+    float: left;
+}
+.menu-item {
+    /* 각각의 메뉴아이템이 수평 */
+    float: left;
+    margin-right: 10px;
+    /* 글자 가운데 정렬 */
+    padding: 8px;
+}
+.clearfix::after {
+    /* 부모요소에 추가 */
+    /* ::는 가상요소 선택자 */
+    /* float로 수평에서뜨는 것을 막아부러 */
+    content: "";
+    display: block;
+    clear: both;
+}

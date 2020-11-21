@@ -1,0 +1,423 @@
+/*COMMON*/
+/*body태그대신에 스타일 넣어부러!*/
+.body__container {
+    font-family: 'Roboto', sans-serif;
+    font-size:16px; /*일반적인 font-size 16px임*/
+    font-weight: 400; /*기본 400임*/
+    color: #333; /*기본은 black임*/
+}
+a {
+    text-decoration: none; /*a는 기본적으로 밑줄을 긋는데 그거 막아부러*/
+}
+/*BTN*/
+.btn {
+    height: 34px;
+    /*red 에서 블루로 그라데이션 주는 함수 ㅋㅎ*/
+    background: #eee linear-gradient(to bottom, #fcfcfc, #eee);
+    border: 1px solid #d5d5d5;
+    border-radius: 4px;
+    display: inline-flex; /*flex는 block이지만 inline으로 inline처럼 해부러*/
+    align-items: center;
+    padding: 0 12px; /*좌우 12px*/
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.5;
+    cursor: pointer;
+    box-sizing: border-box; /*padding 이나 margin으로 값커지는 것을 막아주는 속성 ㅋ*/
+    position: relative; /*아래에서 absolute로 부모가되기위해 지정해부러 -_-*/
+    color: #333;
+    }
+  .btn:hover::before {
+    content: "";
+    position: absolute;  /*button의 절대 위치 부모에서의 position -_-*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.07); /*투명도 7%*/
+  }
+  .btn.btn--primary {
+    border: 1px solid #65b836;
+    color: #fff;
+    background: #55a532 linear-gradient(#91dd70, #55ae2e);
+  }
+
+  /*INPUT TEXT*/
+  .input--text {
+    height: 34px;
+    padding: 0 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box; /*더이상 패딩마진으로 안늘어남!*/
+    outline: none;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.075); /* 0:x축 y축:1px 2px(blur처리)  inset이라는 키워드는 box안에 그림자 넣어부러*/
+    font-size:16px;
+  }
+  .input--text:focus {
+    border-color: #51a7e8; /*파란색*/
+    /*위의 box-shadow가 input창이 focus되었을 때에도 사라지지 않고 적용되게하는 방법 ㅋㅎ*/
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.075),
+                0 0 5px rgba(81,167,232,0.5); 
+  }
+  /*placeholder 제어하기*/
+  /* Vendor Prefix(브라우저 업체별 접두사) */
+  /*webkit은 chrome
+  ms :edge Ie
+  moz: firefox
+  o: opera brower지원안함*/
+  .input--text::-webkit-input-placeholer {
+    color: #cacaca;
+  }
+  .input--text::-ms-input-placeholer {
+    color: #cacaca;
+  }
+  .input--text::-moz-input-placeholer {
+    color: #cacaca;
+  }
+
+  /*FLOAT CLEARFIX*/
+  .clearfix::after {
+      content:"";
+      clear:both;
+      display: block;
+  }
+  .float--left {
+      float: left;
+  }
+  .float--right {
+      float:right;
+  }
+
+  /* SUMMARY */
+  .summary {
+
+  }
+  .summary__title {
+    font-size: 38px;
+    font-weight: 300; /*400이 normal*/
+    line-height: 1.25; /*행간 설정*/
+    margin-bottom: 18px;
+  }
+  .summary__description {
+    font-size: 26px;
+    font-weight: 300;
+    color: #767676;
+    line-height: 1.5;
+  }
+
+  /* SECTION & INNER  */
+  .section {
+    position: relative; /*기준을 자기자신이 되기에 레이아웃에 영향 안줌*/
+  }
+  .section .inner {
+    max-width: 980px;
+    margin: 0 auto;
+    box-sizing: border-box; /*패딩 마진 크기 커짐 방지*/
+    position: relative;/*absolute부모 타고오게끔 할려고!*/
+  }
+
+
+  /*HEADER*/
+  header {
+    border-bottom: 1px solid rgba(0,0,0,.75);
+    box-shadow: 0 0 5px rgba(0,0,0,.75);
+    background: #FFF;  
+  }
+  header .inner {
+    /*높이를 header inner로 잡는 이유  header에 쓰면 inner에도 2번써야함*/
+    /* max-width: 980px; */
+    height: 78px;
+    /* margin: 0 auto; 가운데 정렬, 무조건 적으로 가로사이즈가 정의 돠어야 적용된다! */
+  }
+  header .menu-group {
+    display: flex; /*수평정렬*/
+    align-items: center; /*수직정렬*/
+    height: 100%;
+  }
+  header .logo {
+    margin-right: 10px;
+  }
+  header .logo a {
+    background: url("../img/logo.svg");
+    width: 32px;
+    height: 32px;
+    display:block; /*a 태그는 inline 크기지정위해!*/
+    text-indent: -9999px; /*text가 좌측으로 9999px밀려 대체텍스트 alt삽입! 왜 9999냐? 코드를 디버깅할 때 서로의 약속임 ㅋ 텍스트 alt로 수치적었구나!*/
+  }/*ㅋ 이미지 바꿔부러*/
+  header .logo a:hover {
+    background: url("../img/logo_on.svg"); 
+  }
+  header .main-menu {
+      display: flex;
+  }
+  header .main-menu li a {
+      /*a는 inline*/
+      display: block; /*패딩의 위아래 적용위해*/
+      padding: 10px; /*더넓은 범위를 눌리기위해!*/
+      color: #3c4146;
+ }
+ header .main-menu li a:hover {
+     color: #4078c0;
+ }
+ header .sign-group {
+    display: flex;
+    height: 100%;
+    align-items: center;
+ }
+ header .btn-group {
+    order: 2; /*숫자의 값이 높을수록 순서가 뒤로밀려나*/
+    display: flex;
+ }
+ header .btn-group .sign-in {
+     margin-right: 4px;
+ }
+ /*id선택자는 고유해 명시할 필요없어 앞에 선택자를*/
+ #search-form {
+    order: 1;
+    margin-right: 12px;
+ }
+ #search {
+    width: 160px;
+    font-size: 14px;
+ }
+ /*search의 다음 형제 요소*/
+ #search + [type="submit"] {
+     display: none; /*다음형제 요소가 submit인애 없애버리겠다*/
+ }
+ header .sub-menu {
+    /* order: 0;기본값 0 명시안해 */
+    display: flex;
+    margin-right: 10px;
+ }
+ header .sub-menu li a {
+     padding: 8px;
+     display:block; /*a인라인*/
+     font-size: 13px;
+     color: #3c4146;
+ }
+ header .sub-menu li a:hover {
+     color: #4078c0;
+ }
+
+ /*VISUAL*/
+ .section--visual { /*absolute타고와서 position:relative안보이지만 section section--visual의 section의 공통 선언 부분에 있다 ㅇㅇ*/
+    background-image: url("../img/bg.jpg");
+    background-repeat: no-repeat; /*반복안해*/
+    background-position: bottom left;
+    /*배경이미지가 어떻게되든 cover해라 100%해라*/
+    background-size: cover;
+ }
+ /*배경의 바로앞에다가 어두운 요소를 깔아서 배경이 흐리게만든다 개꿀?!*/
+ .section--visual::before {
+     content: "";
+     position: absolute; /*부모요소에 position이 있어야함*/
+     top: 0;
+     left: 0;
+     /* width: 100%;
+     height: 100%; */
+     bottom:0;
+     right:0; /*모든방향에 0을주고 부모요소로 배치를 해주면 가로세로 100%준거랑 같다*/
+     background: rgba(0,0,0,.3);
+ }
+ .section--visual .inner {
+     display: flex;
+     padding: 160px 0;
+ }
+ .section--visual .summary {
+    flex: 1;
+    margin-right: 90px;
+ }
+ .section--visual .summary__title {
+    color: #fff;
+    font-size: 54px;
+    /*text에 그림자*/
+    text-shadow: 0 1px 1px rgba(0,0,0,.25), 
+                 0 1px 25px rgba(0,0,0,.75); /*x ,y ,blur, 투명도*/
+ }
+ .section--visual .summary__descrition {
+    color: #fff;
+    /*text에 그림자*/
+    text-shadow: 0 1px 1px rgba(0,0,0,.25), 
+                 0 1px 25px rgba(0,0,0,.75); /*x ,y ,blur, 투명도*/
+ }
+ #sign-form {
+    width: 500px; /*여기서 한번에 제어해부러 이렇게 css짜야함!*/
+    margin-top:16px;
+}
+ #sign-form li {
+     margin-bottom: 17px;
+ }
+ #sign-form li:last-child {
+     margin-bottom: 0; /*마지막 li여백 필요없엉*/
+ }
+ #sign-form .input--text {
+    width: 100%;
+    height: 40px;
+ }
+ #sign-form .caption {
+    font-size: 12px;
+    margin-top: 5px;
+    color: rgba(255,255,255,.6);
+    line-height: 1.5;
+    text-align: center;
+ }
+ #sign-form [type="submit"] {
+     display: block;
+     width: 100%;
+     height: 62px;
+     padding: 0 25px;
+     font-size: 20px;
+     justify-content: center;
+ }
+
+ /* FEATURE */
+ .section--feature {
+  background: #f5f5f5;
+  padding-top: 66px;
+ }
+ .section--feature .summary {
+  max-width: 820px; /*margin을 쓸려면 가로너비 정의 필수*/
+  margin: 0 auto;
+  text-align: center;
+ }
+ .section--feature .video {
+  max-width: 650px;
+  margin: 50px auto;
+ }
+ .section--feature .video .video-ratio {
+   height: 0;
+   padding-top: 56.25%;
+   position: relative;
+ }
+ .section--feature .video .video-ratio iframe {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+ }
+ .section--feature .tiles {
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+ }
+ .section--feature .tiles .inner {
+   max-width: 1200px;
+ }
+ .section--feature .tiles ul {
+    /*구형브라우저에서 사용못하는 신기술이다! 다른방법으로 해보자 display:grid;
+    grid-template-columns: repeat(4, 1fr); */
+ }
+ .section--feature .tiles li {
+    padding: 34px 24px; /*위아래 좌우*/
+    text-align: center;
+    line-height: 1.5;
+    border-right: 1px solid #e5e5e5;
+    box-sizing: border-box;
+    float: left;/*예전 방식이지만 사용해보거라 grid대신*/
+    width:25%;/*padding이나 border를 통해 요소가 커지게되면 적용안될수 있으니 box-sizing적용해부러*/
+  }
+  .section--feature .tiles li:last-child {
+    border-right: none;
+  }
+ .section--feature .tiles li img {
+    max-width: 100%;
+    padding: 14px 10% 24px; /*위 좌우 아래*/
+    box-sizing: border-box;
+ }
+ .section--feature .tiles li h3 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+ }
+ .section--feature .tiles li p {
+    font-size: 14px;
+    color:#767676;
+ }
+
+ /*Where is*/
+ .section--where-is {
+
+ }
+ .section--where-is .inner {
+   padding-top:80px;
+}
+ #map {
+   width: 100%;
+   height: 400px;
+   margin-top: 40px;
+   border: 1px solid rgba(0,0,0,.2);
+   border-bottom: none;
+   box-shadow: 0 0 20px rgba(0,0,0,.2);
+   box-sizing: border-box;
+ }
+
+ /*PRICING CARD*/
+ .section--pricing {
+  background: linear-gradient(#f5f5f5, #fff);
+ }
+ .section--pricing .inner {
+    padding: 80px 0;
+ }
+ .section--pricing .card {
+    display: flex;
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+ .section--pricing .card .cell {
+    padding: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+ .section--pricing .card .cell .cell1 .btn {
+   height: 50px;
+   font-size: 16px;
+ }
+.section--pricing .card .cell2 {
+   font-size: 22px;
+   font-weight: 300;
+   line-height: 1.5;
+   flex: 1; /*1 0(basis)*/
+   border-left: 1px solid #e5e5e5;
+ }
+
+ /* FOOTER */
+ footer {
+
+ }
+ footer .inner {
+  padding: 50px 0;
+  border-top: 1px solid #eee;
+ }
+ footer .site-links {
+  display: flex; /*수평*/
+  
+ }
+ footer .site-links li {
+  font-size:12px;
+  margin-right: 10px;
+  box-sizing: border-box;
+  color:#767676;
+ }
+ footer .site-links li a {
+   color: #4078c0; /*a태그 기본 색깔 파랑임*/
+ }
+ footer .site-links li a:hover {
+   text-decoration: underline; /*밑줄그어부러*/
+ }
+ /*특정요소를 부모(inner) 가운데 배치하는 코드*/
+ footer .logo {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; /*전체범위 다씀 h:100% w:100%랑 같은의미*/
+  margin: auto;
+  width: 24px;
+  height: 24px; 
+ }
+ /*logo에 올리면 svg제어하겠다*/
+ footer .logo:hover svg {
+    fill:#4078c0; /*svg의 색을 채워부러 신기하네*/
+ }

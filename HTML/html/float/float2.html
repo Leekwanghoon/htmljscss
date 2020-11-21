@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>float 정렬</title>
+    <style>
+        .box {
+            width: 150px;
+            height: 100px;
+            background: tomato;
+            color: #fff;
+            font-size: 30px;
+            margin: 10px;
+            /* float: right; */
+            float: left;
+        }
+        .box4 {
+            clear: both; /*항상 float을 하면 float해제를 하는 clear:(left,right,both(주로이거사용))를 해줘야해!*/
+            width: 200px;
+            height: 150px;
+            background:orange; /*겹쳐부러 그러니까 해제를해줘*/
+        }
+    </style>
+</head>
+<body>
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box4">4</div>
+</body>
+</html>

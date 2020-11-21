@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>attr^value(시작하는애/ attr$value(끝나느애)</title>
+    <style>
+        /*carot기호 이렇게하면 이름 안정해*/
+        [class^="btn-"] {
+            font-weight: bold;
+            border-radius: 20px;
+        }
+        [class$=success] {
+            color: green;
+        }
+        [class$=danger] {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn-success">Success</button>
+    <button class="btn-danger">Danger</button>
+    <button>Normal</button>
+</body>
+</html>

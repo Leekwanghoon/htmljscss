@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./imges.css">
+</head>
+<body>
+    <!-- <img src="./img/퇴직증명.jpg" alt="퇴직증명"> -->
+    <!-- sizes는 최적화된 이미지 srcset은 출력될 이미지 목록 -->
+    <img
+        srcset="./img/heropy_small.webp 400w,
+                ./img/heropy_medium.webp 700w,
+                ./img/heropy_large.webp 1000w,"
+        sizes="(max-width: 500px) 444px,
+               (max-width: 800px) 777px,
+               1222px"
+        width="400"
+        src="./img/heropy.webp"
+        alt="HEROPY"
+        />
+</body>
+</html>

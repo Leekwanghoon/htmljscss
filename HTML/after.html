@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가상요소 선택자 after</title>
+    <style>
+        div {
+            font-size: 100px;
+        }
+        div::before {
+            content:"<";
+        }
+        /*가상요소 선택자 앞에 콜론이 : 하나만있어도 동작은하지만 가상클래스 선택자라는 개념 : 과 혼동 되므로 가상요소선택자:: 반드시 2개쓴다*/
+        div::after{
+            content:">"
+        }
+    </style>
+</head>
+<body>
+    <div>DIV</div>
+</body>
+</html>

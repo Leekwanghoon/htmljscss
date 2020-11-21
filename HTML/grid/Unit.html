@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>min-content</title>
+    <style>
+        .container {
+            border: 10px solid lightgray;
+            display: grid;
+            /* grid-template-columns: 1fr min-content; 가장 작은 숫자만큼 영역처먹어! */
+            /* grid-template-columns: min-content 1fr;  typesetting이라는 단어가 가장 작음*/
+            /* grid-template-columns: max-content 1fr;  최대한의 컨텐트 너비를 사용함 */
+            /*한글은 띄어쓰기 다해부러 이거를 영어와 동일하게 만들어줘*/
+            /* word-break: keep-all; */
+            grid-template-columns: 1fr 1fr;
+        }
+        .item {
+            border: 10px solid red;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">Lore Ipsum is simply dummy text of the printing and typesetting industry</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+    </div>
+</body>
+</html>
